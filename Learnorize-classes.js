@@ -8,7 +8,7 @@ player(user, duration,steps,accuracy,points);{
     }
 
 //Constructor class for the game library.
-gameLibrary(title, game, difficulty, numPlayers, subject);{
+gameLibrary(title, game, difficulty, numPlayers, subject, theme);{
     this.title = title;
     this.game = gameID;
     this.difficulty = difficulty;
