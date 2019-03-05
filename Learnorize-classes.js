@@ -14,6 +14,7 @@ gameLibrary(title, game, difficulty, numPlayers, subject);{
     this.difficulty = difficulty;
     this.numPlayers = numberOfPlayers;
     this.subject = subject;
+    this.theme = theme;
 }
 
 /**  Class for the game board. - what do we need in here? Do we need a class
