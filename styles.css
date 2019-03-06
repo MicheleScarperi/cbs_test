@@ -1,36 +1,44 @@
-/*Reset to apply to all items*/
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
   }
-/*this will center both vertically and horizontally*/
+  
   body {
     height: 100vh;
     display: flex;
     background: #060AB2;
   }
-  /*This is also a flex-container. Items will shrink in width to fit container.*/
+  
   .memory-game {
-    width: 640px;
+    width: 840px;
     height: 640px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
     perspective: 1000px;
   }
+  
   .memory-card {
     width: calc(25% - 10px);
     height: calc(33.333% - 10px);
     margin: 5px;
     position: relative;
-    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
     transform: scale(1);
-    transform: preserve-3d;
+    transform-style: preserve-3d;
     transition: transform .5s;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
   }
-  /*Two things do not work: when clicking a card the backside doesnt hide
-  and backface-visibility doesnt seem to work, because u cant see the other image.*/
+  
+  .memory-card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+  }
+  
+  .memory-card.flip {
+    transform: rotateY(180deg);
+  }
+  
   .front-face,
   .back-face {
     width: 100%;
@@ -41,13 +49,8 @@
     background: #1C7CCC;
     backface-visibility: hidden;
   }
-
-  .memory-card:active {
-transform: scale(0.8);
-transition: transform .2s;
-  }
-
-  .memory-card.flip {
+  
+  .front-face {
     transform: rotateY(180deg);
   }
   
